@@ -116,6 +116,10 @@
       max-width: 500px;
     }
 
+    #playMusicButton {
+      display: none;
+    }
+
     footer {
       margin-top: 50px;
       font-size: 1rem;
@@ -169,8 +173,8 @@
       <button onclick="showMessage()">Klikni ovde, ljubavi 💜</button>
 
       <div id="secretMessage">
-        Jasmina, volim te mnogo.  
-        Cak i kada je zivot tezak, cak i kada su dani naporni, ti mi i dalje znacis vise nego sto mogu da opisem.  
+        Jasmina, volim te mnogo.<br><br>
+        Cak i kada je zivot tezak, cak i kada su dani naporni, ti mi i dalje znacis vise nego sto mogu da opisem.<br><br>
         Ne trazim savrseno. Zelim nas. Zelim ljubav, mir, neznost, smeh i buducnost u kojoj biramo jedno drugo svaki dan 💜
       </div>
     </div>
@@ -191,11 +195,11 @@
     </div>
 
     <div class="card">
-      <h2>Moje obecanje🤞</h2>
+      <h2>Moje obecanje 🤞</h2>
       <p>
         Obecavam da cu da se trudim, da slusam, da rastem i da te volim iskreno.
         Moja osecanja prema tebi su stvarna.
-        Ti nisi samo neko u mom zivotu 
+        Ti nisi samo neko u mom zivotu —
         ti si osoba koju stvarno zelim pored sebe.
       </p>
     </div>
@@ -203,20 +207,20 @@
     <div class="card">
       <h2>Pesmica 💜</h2>
       <p>
-        Ovde mozes da pustis pesmicu koju sam dodao za tebe
+        Pesmica bi trebalo da krene sama kada se stranica otvori.
+        Ako browser to blokira, samo klikni dugme ispod ili bilo gde na stranici 💜
       </p>
 
-      <!-- 
-        Da dodaš pesmu:
-        1. Ubaci MP3 fajl u isti GitHub folder gde je index.html
-        2. Nazovi ga pesma.mp3
-        3. Ili promeni src="pesma.mp3" u pravo ime fajla
-      -->
-
-      <audio controls>
-        <source src="pesma.mp3" type="audio/mpeg">
-        Tvoj browser ne podržava audio player.
+      <audio id="loveSong" controls autoplay loop preload="auto">
+        <source src="./pesma.mp3.mp3" type="audio/mpeg">
+        Tvoj browser ne podrzava audio player.
       </audio>
+
+      <br>
+
+      <button id="playMusicButton" onclick="startMusic()">
+        Pusti pesmicu 💜
+      </button>
     </div>
 
     <footer>
@@ -228,7 +232,54 @@
     function showMessage() {
       const message = document.getElementById("secretMessage");
       message.style.display = "block";
+      startMusic();
     }
+
+    function startMusic() {
+      const audio = document.getElementById("loveSong");
+      const button = document.getElementById("playMusicButton");
+
+      audio.volume = 0.7;
+
+      audio.play()
+        .then(() => {
+          if (button) {
+            button.style.display = "none";
+          }
+        })
+        .catch(() => {
+          if (button) {
+            button.style.display = "inline-block";
+          }
+        });
+    }
+
+    window.addEventListener("load", function () {
+      const audio = document.getElementById("loveSong");
+      const button = document.getElementById("playMusicButton");
+
+      audio.volume = 0.7;
+
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            if (button) {
+              button.style.display = "none";
+            }
+          })
+          .catch(() => {
+            if (button) {
+              button.style.display = "inline-block";
+            }
+          });
+      }
+    });
+
+    document.body.addEventListener("click", function () {
+      startMusic();
+    }, { once: true });
 
     function createHeart() {
       const heart = document.createElement("div");
