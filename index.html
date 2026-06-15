@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Za Jasminu 💜</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a0dad, #9b5de5, #c77dff);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 35px;
+      margin: 25px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .card p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 999px;
+      background: white;
+      color: #7b2cbf;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      background: #f3e8ff;
+    }
+
+    #secretMessage {
+      display: none;
+      margin-top: 25px;
+      font-size: 1.3rem;
+      line-height: 1.7;
+      animation: fadeIn 1s ease;
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .reason {
+      background: rgba(255,255,255,0.22);
+      padding: 20px;
+      border-radius: 18px;
+      font-size: 1.05rem;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      color: rgba(255,255,255,0.9);
+      font-size: 24px;
+      animation: fall linear forwards;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Za Jasminu 💜</h1>
+    <p class="subtitle">Mala stranica za osobu koju volim vise nego sto umem da objasnim.</p>
+
+    <div class="card">
+      <h2>Moje pismo za tebe</h2>
+      <p>
+        Napravio sam ovo jer nekad obicne reci nisu dovoljne i mislim da ce da ti se svideti xD.
+        Zelim da znas da te volim puno, iskreno i celim srcem.
+        Ti si mi posebna na nacin koji ne mogu lako da objasnim you weirdo 💜,
+        ali se nadam da ovo sta god da sam uspeo da napravim pokazuje bar jedan deo toga 👀.
+      </p>
+
+      <button onclick="showMessage()">Klikni ovde, ljubavi 💜</button>
+
+      <div id="secretMessage">
+        Jasmina, volim te mnogo.  
+        Cak i kada je zivot tezak, cak i kada su dani naporni, ti mi i dalje znacis vise nego sto mogu da opisem.  
+        Ne trazim savrseno. Zelim nas. Zelim ljubav, mir, neznost, smeh i buducnost u kojoj biramo jedno drugo svaki dan. 💜
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Razlozi zbog kojih te volim</h2>
+
+      <div class="reasons">
+        <div class="reason">Tvoj osmeh mi popravi dan</div>
+        <div class="reason">Tvoj glas mi daje mir</div>
+        <div class="reason">Volim da se izgubim u tvojim ocima kad te gledam 👀</div>
+        <div class="reason">Lepa si na nacine koje ni sama ne primecujes</div>
+        <div class="reason">Stalo mi je do tebe vise nego što umem da kazem</div>
+        <div class="reason">Zelim da gradim nesto lepo sa tobom</div>
+        <div class="reason">Ti si moja omiljena osoba na ovom svetu</div>
+        <div class="reason">Blesava si samo tako</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Moje obecanje🤞</h2>
+      <p>
+        Obecavam da cu da se trudim, da slusam, da rastem i da te volim iskreno.
+        Moja osecanja prema tebi su stvarna.
+        Ti nisi samo neko u mom životu 
+        ti si osoba koju stvarno zelim pored sebe.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Pesmica 💜</h2>
+      <p>
+        Ovde mozes da pustis pesmicu koju sam dodao za tebe.
+      </p>
+
+      <!-- 
+        Da dodaš pesmu:
+        1. Ubaci MP3 fajl u isti GitHub folder gde je index.html
+        2. Nazovi ga pesma.mp3
+        3. Ili promeni src="pesma.mp3" u pravo ime fajla
+      -->
+
+      <audio controls>
+        <source src="pesma.mp3" type="audio/mpeg">
+        Tvoj browser ne podržava audio player.
+      </audio>
+    </div>
+
+    <footer>
+      Nadam se da je ispalo okej xDD, tvoj Vlada 💜
+    </footer>
+  </div>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById("secretMessage");
+      message.style.display = "block";
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💜";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      heart.style.fontSize = Math.random() * 20 + 18 + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
